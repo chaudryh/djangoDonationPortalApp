@@ -33,7 +33,7 @@ class User(models.Model):
 
 
 
-class donationtMade(models.Model):
+class donationMade(models.Model):
     Amount = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     donation = models.ForeignKey(donationtype, on_delete=models.CASCADE)

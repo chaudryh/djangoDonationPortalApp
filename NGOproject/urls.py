@@ -14,5 +14,7 @@ urlpatterns = [
     url('userManagement/', views.user_Management, name='userManagement'),
     url('accounts/', include('django.contrib.auth.urls')),
     url('^$', views.home, name='home'),
+    url(r'^delete/(?P<id>[0-9]+)/$', views.delete_user, name='delete_view'),
+
 
 ]

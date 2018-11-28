@@ -18,7 +18,7 @@
         <td>{{ user.lastname }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.role }}</td>
-        <td><a href= "{% url 'delete_user %}"> Delete</a></td>
+        <td><a href= "{% url 'delete_view' user.id%}"> Delete</a></td>
 
     </tr>
     {% endfor %}

@@ -2,9 +2,25 @@
 
 {% block content %}
 
+<table>
+    <tr>
+        <th> Name           </th>
+        <th> Date           </th>
+        <th> Amount         </th>
+        <th> Donation Type  </th>
 
 
+    </tr>
+    {% for donation in donations %}
+    <tr>
+        <td>{{ donation.user.firstname }} {{ donation.user.lastname }}</td>
+        <td>{{ donation.user.created_date.date}}</td>
+        <td>{{ donation.Amount }}</td>
+        <td>{{ donation.donation.name }}</td>
+{#        <td><a href= "{% url 'edit_user' %}"> Edit</a></td>#}
+{#        <td><a href= "{% url 'delete_user',{user.id} %}"> Delete</a></td>#}
 
-
-
+    </tr>
+    {% endfor %}
+    </table>
 {% endblock %}

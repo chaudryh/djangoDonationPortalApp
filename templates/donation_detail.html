@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
-
-    <h1><STRONG>{{ user }}</STRONG></h1>
-
-
-
+  <form method='post' class="DonationForm">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit" class="save button">save</button>
+  </form>
 {% endblock %}

@@ -3,8 +3,9 @@ from django.utils import timezone
 
 
 class donationtype(models.Model):
-    name = models.TextField(max_length=200)
-    monthlyComitment = models.BooleanField
+    Amount = models.IntegerField()
+    name = models.CharField(max_length=200)
+    monthlyComitment = models.BooleanField()
 
 
 
@@ -34,6 +35,6 @@ class User(models.Model):
 
 
 class donationtMade(models.Model):
-    Amount = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     donation = models.ForeignKey(donationtype, on_delete=models.CASCADE)
+

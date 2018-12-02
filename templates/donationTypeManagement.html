@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="{% url 'addDonationType'%}">
+    <input type="submit" value="Add Donation Type" />
+</form>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Donation Type</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for donationType in donationTypes %}
+    <tr>
+        <td>{{ donationType.name }}</td>
+<!--{#      <td><a href= "{% url 'edit_user' %}"> Edit</a></td>#}-->
+      <td><form action="{% url 'delete_donation_type' id=donationType.id %}" method="POST">
+                {% csrf_token %}
+                <input class="btn btn-default btn-danger" type="submit" value="Delete"/>
+            </form></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
